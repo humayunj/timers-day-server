@@ -13,7 +13,7 @@ export async function create(name: string) {
   return {
     id: timer._id,
     title: timer.name,
-    startTime: timer.createdAt.getMilliseconds(),
+    startTime: timer.createdAt.getTime(),
   };
 }
 export function deleteOne(id: ITimer["_id"]) {
@@ -27,7 +27,7 @@ export async function find(query: any = {}) {
   return (await Timer.find(query).exec()).map((t) => ({
     id: t._id,
     title: t.name,
-    startTime: t.createdAt.getMilliseconds(),
+    startTime: t.createdAt.getTime(),
   }));
 }
 

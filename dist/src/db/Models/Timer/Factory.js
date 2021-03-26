@@ -61,7 +61,7 @@ function create(name) {
                     return [2 /*return*/, {
                             id: timer._id,
                             title: timer.name,
-                            startTime: timer.createdAt.getMilliseconds(),
+                            startTime: timer.createdAt.getTime(),
                         }];
             }
         });
@@ -85,7 +85,7 @@ function find(query) {
                 case 1: return [2 /*return*/, (_a.sent()).map(function (t) { return ({
                         id: t._id,
                         title: t.name,
-                        startTime: t.createdAt.getMilliseconds(),
+                        startTime: t.createdAt.getTime(),
                     }); })];
             }
         });
